@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weight convertor 2</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function convert(){
+            var kilograms;
+            kilograms = document.getElementById('kgs').value;
+
+            if(isNaN(kilograms) || kilograms<=0){
+                window.alert("weight must be greater than zero!!");
+            }
+            else{
+                var result;
+                result=kilograms*1000;
+                document.getElementById('grams').value = result.toFixed(2);
+                result = kilograms*2.20462;
+                document.getElementById('pounds').value = result.tofixed(2);
+                result = kilograms*35.274;
+                document.getElementById('ounce').value =   result.toFixed(2);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1> Weight Converter </h1>
+    <br></br>
+     <div class="card">
+        <form name="converter" class="main" action="index.html" method="POST">
+           <label>weight (in kgs) : </label> 
+           <input class="values" type="text" name="inkilograms" id="kgs" placeholder="Enter Weight..">
+           <br></br>
+           <br></br>
+           <input id="button" value="convert" type="button" onclick="convert()"/>
+           <input id="buttons" value="Reset" type="reset"/>
+           <br></br>
+           <br></br>
+           <br></br>
+           <label>weight (in grams) : </label>
+           <input class="values" type="text" name="ingrams" id="grams">
+           <br></br>
+           <label>weight (in pounds) : </label>
+           <input class="values" type="text"name="inpounds" id="pounds">
+           <br></br>
+           <label> weight(in ounce) : </label>
+           <input class="values" type="text" name="inounce" id="ounce">
+        </form>
+    </div>
+    
+</body>
+</html>
